@@ -1,5 +1,6 @@
 import "./index.css"
 import "./App.css"
+import ScrollProgress from "./components/ScrollProgress.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Home from "./components/Home.jsx"
 import About from "./components/About.jsx"
@@ -32,6 +33,7 @@ function App() {
 
 	return (
 		<>
+			<ScrollProgress />
 			<Navbar logo="Mohamed" />
 			<Home />
 			<About />
