@@ -1,11 +1,10 @@
 import { useState } from "react"
-import { Fragment } from "react"
 
 export default function Contact() {
     const form = [
-        { label: "Name", type: "text", name: "name" },
-        { label: "Email", type: "email", name: "email" },
-        { label: "Message", type: "textarea", name: "message" }
+        { label: "Name", type: "text", name: "name", labelClass: "name-label"},
+        { label: "Email", type: "email", name: "email", labelClass: "email-label"},
+        { label: "Message", type: "textarea", name: "message", labelClass: "massage-label"}
     ]
 
     const contactLinks = [
@@ -35,7 +34,7 @@ export default function Contact() {
 
         {
             name: "CV",
-            url: "/CV.pdf",
+            url: " /Personal-Portfolio/CV.pdf",
             text: "View Resume"
         }
     ]
@@ -87,7 +86,7 @@ export default function Contact() {
 
             <div className="section-heading" data-reveal>
                 <span className="section-eyebrow">Have a Project in Mind?</span>
-                <h2 className="section-title">GET IN TOUCH</h2>
+                <h2 className="section-title">Get in Touch</h2>
                 <p>
                     I'm always open to discussing new projects, creative ideas, and opportunities to collaborate.
                 </p>
@@ -98,10 +97,11 @@ export default function Contact() {
                 <form className="contact-form" data-reveal onSubmit={handleSubmit}>
 
                     {form.map((input) => (
-                        <Fragment key={input.name}>
-                            <label htmlFor={input.name}>{input.label}</label>
+                        <div key={input.name} className="input-group">
+                            <label htmlFor={input.name} className={input.labelClass}>{input.label}</label>
                             {(input.type === "text") && (
                                 <input
+                                    className={input.name}
                                     type={input.type}
                                     id={input.name}
                                     name={input.name}
@@ -113,6 +113,7 @@ export default function Contact() {
 
                             {(input.type === "email") && (
                                 <input
+                                    className={input.name}
                                     type={input.type}
                                     id={input.name}
                                     name={input.name}
@@ -127,6 +128,7 @@ export default function Contact() {
 
                             {input.type === "textarea" && (
                                 <textarea
+                                    className={input.name}
                                     id={input.name}
                                     name={input.name}
                                     rows={5}
@@ -136,7 +138,7 @@ export default function Contact() {
                                 />
                             )}
 
-                        </Fragment>
+                        </div>
                     ))}
 
                     <button type="submit" className="btn btn-primary">{isSubmitting ? "...Sending" : "Send Message"}</button>
@@ -161,6 +163,7 @@ export default function Contact() {
                         <a
                             key={link.name}
                             href={link.url}
+                            target="_blank"
                             rel="noopener"
                             className="contact-link"
                         >

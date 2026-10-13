@@ -60,7 +60,8 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="/CV.pdf"
+                            href=" /Personal-Portfolio/CV.pdf"
+                            target="_blank"
                             download="Mohamed-Sheba-Resume.pdf"
                             rel="noopener"
                             aria-label="Resume">

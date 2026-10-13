@@ -730,8 +730,9 @@
     gap: 8px;
 }
 
-.contact-form label {
-    margin-top: 12px;
+.input-group label {
+    display: inline-block;
+    margin: 12px 0 7px;
     color: var(--text-muted);
     font-size: 0.9rem;
     transition: color var(--transition);
@@ -763,7 +764,7 @@
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
 }
 
-.contact-form:focus-within label {
+.input-group:focus-within label {
     color: var(--secondary-color);
 }
 
